@@ -15,7 +15,7 @@ ZABBIX_API_TOKEN = config['zabbix']['token']
 zabbix_api_session = requests.Session()
 zabbix_api_session.headers = {"Authorization": "Bearer {}".format(ZABBIX_API_TOKEN)}
 
-# Get all hosts from the Zabbix API
+# Get all imnages from the Zabbix API
 zabbix_api_request = {
            "jsonrpc": "2.0",
            "method": "image.get",
