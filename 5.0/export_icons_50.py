@@ -14,7 +14,6 @@ ZABBIX_API_TOKEN = config['zabbix']['token']
 
 # Create a Zabbix API session
 zabbix_api_session = requests.Session()
-zabbix_api_session.headers = {"Authorization": "Bearer {}".format(ZABBIX_API_TOKEN)}
 
 # Get all hosts from the Zabbix API
 zabbix_api_request = {
@@ -24,6 +23,7 @@ zabbix_api_request = {
                "output": "extend",
                "select_image": "true"
            },
+           "auth":"ZABBIX_API_TOKEN",
            "id": 1
        }
 zabbix_api_response = zabbix_api_session.post(ZABBIX_API_URL, json=zabbix_api_request)
