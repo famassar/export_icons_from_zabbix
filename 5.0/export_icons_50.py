@@ -23,7 +23,7 @@ zabbix_api_request = {
                "output": "extend",
                "select_image": "true"
            },
-           "auth":"ZABBIX_API_TOKEN",
+           "auth": ZABBIX_API_TOKEN,
            "id": 1
        }
 zabbix_api_response = zabbix_api_session.post(ZABBIX_API_URL, json=zabbix_api_request)
